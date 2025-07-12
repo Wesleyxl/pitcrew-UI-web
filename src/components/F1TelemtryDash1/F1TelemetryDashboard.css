@@ -32,7 +32,7 @@
   grid-row: 2;
   border: 1px solid #555;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
   padding: 0 40px;
   font-size: 20px;
@@ -55,7 +55,7 @@
   grid-row: 2;
   border: 1px solid #555;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
   padding: 0 40px;
   font-size: 20px;
@@ -78,6 +78,28 @@
 }
 
 /* gear ocupa 4 colunas e 4 linhas*/
+.time-title {
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+}
+.time-value {
+  font-size: 50px;
+  margin: 0;
+  padding: 0;
+}
+.span-title {
+  font-size: 20px;
+  margin: 0 30px 0 0;
+  padding: 0;
+}
+
+.span-value {
+  font-size: 30px;
+  margin: 0;
+  padding: 0;
+}
+
 .gear {
   grid-column: 9 / span 4;
   grid-row: 3 / span 4;
@@ -98,9 +120,9 @@
   border: 1px solid #555;
   padding: 8px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 45px;
   font-weight: bold;
 }
 
@@ -110,17 +132,9 @@
   border: 1px solid #555;
   padding: 8px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  font-weight: bold;
-  p {
-    font-size: 50px;
-  }
-  span {
-    font-size: 20px;
-    margin-left: 10px;
-  }
 }
 
 /* .delta-time repete o current-time  */
@@ -130,11 +144,10 @@
   border: 1px solid #555;
   padding: 8px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 50px;
   font-weight: bold;
-  color: green;
 }
 
 /* car-damages ocupar 8 colunas podem 10 linhas */
@@ -194,9 +207,9 @@
   border: 1px solid #555;
   padding: 8px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 50px;
   font-weight: bold;
 }
 
@@ -206,9 +219,9 @@
   border: 1px solid #555;
   padding: 8px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 50px;
   font-weight: bold;
 }
 
