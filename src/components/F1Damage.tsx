@@ -1,9 +1,9 @@
-import type { CarDamageF124Type } from "../../types/f124/TelemetryTypes/car-damage.types";
-import type { CarTelemetryF124Type } from "../../types/f124/TelemetryTypes/car-telemetry.types";
+import type { CarDamageF124Type } from "../types/f124/TelemetryTypes/car-damage.types"
+import type { CarTelemetryF124Type } from "../types/f124/TelemetryTypes/car-telemetry.types"
 
 interface Props {
-  carDamage?: CarDamageF124Type | null;
-  carTelemetry?: CarTelemetryF124Type | null;
+  carDamage?: CarDamageF124Type | null
+  carTelemetry?: CarTelemetryF124Type | null
 }
 
 const F1SvgDamage = (props: Props) => {
@@ -39,9 +39,7 @@ const F1SvgDamage = (props: Props) => {
           <span style={{ opacity: 0.5, marginLeft: "10px" }}>%</span>
         </p>
         <p>
-          {props.carTelemetry
-            ? props.carTelemetry.carTelemetryData[0].brakesTemperature[2]
-            : "0 C"}
+          {props.carTelemetry ? props.carTelemetry.carTelemetryData[0].brakesTemperature[2] : "0 C"}
           <span style={{ opacity: 0.5, marginLeft: "10px" }}>Breakes Temp</span>
         </p>
       </div>
@@ -71,9 +69,7 @@ const F1SvgDamage = (props: Props) => {
           <span style={{ opacity: 0.5, marginLeft: "10px" }}>%</span>
         </p>
         <p>
-          {props.carTelemetry
-            ? props.carTelemetry.carTelemetryData[0].brakesTemperature[0]
-            : "0 C"}
+          {props.carTelemetry ? props.carTelemetry.carTelemetryData[0].brakesTemperature[0] : "0 C"}
           <span style={{ opacity: 0.5, marginLeft: "10px" }}>Breakes Temp</span>
         </p>
       </div>
@@ -82,6 +78,8 @@ const F1SvgDamage = (props: Props) => {
         width={162}
         height={353}
         fill="none"
+        viewBox="0 0 162 353"
+        style={{ margin: "0 auto" }}
       >
         <path
           stroke="#fff"
@@ -177,9 +175,7 @@ const F1SvgDamage = (props: Props) => {
           <span style={{ opacity: 0.5, marginLeft: "10px" }}>%</span>
         </p>
         <p>
-          {props.carTelemetry
-            ? props.carTelemetry.carTelemetryData[0].brakesTemperature[3]
-            : "0 C"}
+          {props.carTelemetry ? props.carTelemetry.carTelemetryData[0].brakesTemperature[3] : "0 C"}
           <span style={{ opacity: 0.5, marginLeft: "10px" }}>Breakes Temp</span>
         </p>
       </div>
@@ -209,13 +205,11 @@ const F1SvgDamage = (props: Props) => {
           <span style={{ opacity: 0.5, marginLeft: "10px" }}>%</span>
         </p>
         <p>
-          {props.carTelemetry
-            ? props.carTelemetry.carTelemetryData[0].brakesTemperature[1]
-            : "0 C"}
+          {props.carTelemetry ? props.carTelemetry.carTelemetryData[0].brakesTemperature[1] : "0 C"}
           <span style={{ opacity: 0.5, marginLeft: "10px" }}>Breakes Temp</span>
         </p>
       </div>
     </div>
-  );
-};
-export default F1SvgDamage;
+  )
+}
+export default F1SvgDamage

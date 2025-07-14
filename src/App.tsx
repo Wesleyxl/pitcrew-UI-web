@@ -1,31 +1,20 @@
-import "./App.css";
-import F1Dashboard from "./components/F1TelemtryDash1/F1Dashboard";
-import { useAlertsWithVoice } from "./hooks/useAlertsWithVoice";
-import { useVoiceUnlock } from "./hooks/useVoiceUnlock";
+import { Route, Routes } from "react-router-dom"
+import DashboardF1V1 from "./pages/Dashboard-f1-v1"
 
-const voicePack = {
-  radioCheck: "/voice/radio_check/test-2.wav",
-};
-
-export default function App() {
-  const { unlocked, unlock } = useVoiceUnlock(voicePack.radioCheck);
-
-  // SEM IF AQUI! Hook SEMPRE CHAMADO!
-  useAlertsWithVoice(unlocked);
-
+function App(): JSX.Element {
   return (
-    <div className="App">
-      <h1>🏎 PitCrew Dashboard</h1>
-      <div>
-        {!unlocked ? (
-          <button onClick={unlock}>🔊 Ativar Sons do Engenheiro Virtual</button>
-        ) : (
+    <Routes>
+      <Route path="/" element={<DashboardF1V1 />} />
+      <Route
+        path="/dashboard"
+        element={
           <div>
-            <F1Dashboard />
-            <p>✅ Sons Ativados! Agora o app pode falar com você.</p>
+            <h1>Dashboard</h1>
           </div>
-        )}
-      </div>
-    </div>
-  );
+        }
+      />
+    </Routes>
+  )
 }
+
+export default App
