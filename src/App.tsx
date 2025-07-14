@@ -1,31 +1,35 @@
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
 import "./App.css";
-import F1Dashboard from "./components/F1TelemtryDash1/F1Dashboard";
-import { useAlertsWithVoice } from "./hooks/useAlertsWithVoice";
-import { useVoiceUnlock } from "./hooks/useVoiceUnlock";
 
-const voicePack = {
-  radioCheck: "/voice/radio_check/test-2.wav",
-};
-
-export default function App() {
-  const { unlocked, unlock } = useVoiceUnlock(voicePack.radioCheck);
-
-  // SEM IF AQUI! Hook SEMPRE CHAMADO!
-  useAlertsWithVoice(unlocked);
+function App() {
+  const [count, setCount] = useState(0);
 
   return (
-    <div className="App">
-      <h1>🏎 PitCrew Dashboard</h1>
+    <>
       <div>
-        {!unlocked ? (
-          <button onClick={unlock}>🔊 Ativar Sons do Engenheiro Virtual</button>
-        ) : (
-          <div>
-            <F1Dashboard />
-            <p>✅ Sons Ativados! Agora o app pode falar com você.</p>
-          </div>
-        )}
+        <a href="https://vite.dev" target="_blank">
+          <img src={viteLogo} className="logo" alt="Vite logo" />
+        </a>
+        <a href="https://react.dev" target="_blank">
+          <img src={reactLogo} className="logo react" alt="React logo" />
+        </a>
       </div>
-    </div>
+      <h1>Vite + React</h1>
+      <div className="card">
+        <button onClick={() => setCount((count) => count + 1)}>
+          count is {count}
+        </button>
+        <p>
+          Edit <code>src/App.tsx</code> and save to test HMR
+        </p>
+      </div>
+      <p className="read-the-docs">
+        Click on the Vite and React logos to learn more
+      </p>
+    </>
   );
 }
+
+export default App;
