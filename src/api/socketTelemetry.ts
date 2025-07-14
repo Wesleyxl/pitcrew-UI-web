@@ -1,8 +1,6 @@
 import { io } from "socket.io-client"
 
-const url = import.meta.env.VITE_API_URL_TELEMETRY
-
-export const socketTelemetry = io(url, {
+export const socketTelemetry = io("http://localhost:3000/telemetry/f1", {
   transports: ["websocket"],
 })
 

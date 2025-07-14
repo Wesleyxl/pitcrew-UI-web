@@ -1,8 +1,11 @@
 import { useState } from "react"
 
-export function useVoiceUnlock(initialSoundUrl: string) {
+export function useVoiceUnlock(initialSoundUrl: string | null) {
   const [unlocked, setUnlocked] = useState(false)
 
+  if (!initialSoundUrl) {
+    return { unlocked, unlock: () => {} }
+  }
   const unlock = () => {
     const audio = new Audio(initialSoundUrl)
     audio
