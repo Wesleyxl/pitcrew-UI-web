@@ -7,6 +7,8 @@ import type { LapF124Type } from "../types/f124/TelemetryTypes/lap.types"
 import type { CarTelemetryF124Type } from "../types/f124/TelemetryTypes/car-telemetry.types"
 import type { CarDamageF124Type } from "../types/f124/TelemetryTypes/car-damage.types"
 import type { TimeTrialF124Type } from "../types/f124/TelemetryTypes/time-trial.types"
+import { playLapTimeAudio } from "utils/playLapTimeAudio"
+import { playPenaltyAlert } from "utils/penaltites.audio"
 
 function formatTime(ms: number): string {
   const totalSeconds = ms / 1000
@@ -50,18 +52,18 @@ const F1Dashboard = () => {
   }, [])
 
   React.useEffect(() => {
-    const handler = (payload: { message: string }) => {
-      console.log(payload.message)
+    const handler = (payload: { type: string; data: any }) => {
+      if (payload.type === "new_lap") {
+        playLapTimeAudio(payload.data.time)
+      } else if (payload.type === "penalties") {
+        playPenaltyAlert(payload.data.type)
+      }
+    }
 
-      const u = new SpeechSynthesisUtterance(payload.message)
-      u.lang = "pt-BR"
-      window.speechSynthesis.speak(u)
-    }
-    alertsSocket.on("alert", handler)
-    return () => {
-      alertsSocket.off("alert", handler)
-    }
+    alertsSocket.on("new_lap", handler)
+    return () => alertsSocket.off("new_lap", handler)
   }, [])
+
   return (
     <Grid
       templateColumns="repeat(20, 1fr)"

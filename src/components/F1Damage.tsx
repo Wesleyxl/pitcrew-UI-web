@@ -35,7 +35,7 @@ const F1SvgDamage = (props: Props) => {
           <span style={{ opacity: 0.5, marginLeft: "10px" }}>PSI</span>
         </p>
         <p>
-          {props.carDamage ? 100 - props.carDamage.tyreWear[2] : "0"}
+          {props.carDamage ? `${Math.round(100 - props.carDamage.tyreWear[2])}` : "0%"}
           <span style={{ opacity: 0.5, marginLeft: "10px" }}>%</span>
         </p>
         <p>
@@ -65,7 +65,7 @@ const F1SvgDamage = (props: Props) => {
           <span style={{ opacity: 0.5, marginLeft: "10px" }}>PSI</span>
         </p>
         <p>
-          {props.carDamage ? 100 - props.carDamage.tyreWear[0] : "0"}
+          {props.carDamage ? `${Math.round(100 - props.carDamage.tyreWear[0])}` : "0%"}
           <span style={{ opacity: 0.5, marginLeft: "10px" }}>%</span>
         </p>
         <p>
@@ -171,7 +171,7 @@ const F1SvgDamage = (props: Props) => {
           <span style={{ opacity: 0.5, marginLeft: "10px" }}>PSI</span>
         </p>
         <p>
-          {props.carDamage ? 100 - props.carDamage.tyreWear[3] : "0"}
+          {props.carDamage ? `${Math.round(100 - props.carDamage.tyreWear[3])}` : "0%"}
           <span style={{ opacity: 0.5, marginLeft: "10px" }}>%</span>
         </p>
         <p>
@@ -201,7 +201,7 @@ const F1SvgDamage = (props: Props) => {
           <span style={{ opacity: 0.5, marginLeft: "10px" }}>PSI</span>
         </p>
         <p>
-          {props.carDamage ? 100 - props.carDamage.tyreWear[1] : "0"}
+          {props.carDamage ? `${Math.round(100 - props.carDamage.tyreWear[1])}` : "0%"}
           <span style={{ opacity: 0.5, marginLeft: "10px" }}>%</span>
         </p>
         <p>
